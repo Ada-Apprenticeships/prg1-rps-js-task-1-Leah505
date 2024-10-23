@@ -36,8 +36,6 @@ function rockPaperScissors(player1, player2) {
   return result;
 }
 
-rockPaperScissors("paper", "paper")
-
 // Code for the automated tests
 module.exports = {
   rockPaperScissors,
