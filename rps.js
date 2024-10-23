@@ -1,21 +1,27 @@
 function rockPaperScissors(player1, player2) {
+  // Object that defines what each choice defeats
+  const winningRules = {
+      rock: ['scissors', 'lizard'],
+      paper: ['rock', 'spock'],
+      scissors: ['paper', 'lizard'],
+      lizard: ['spock', 'paper'],
+      spock: ['scissors', 'rock'],
+  };
+
+  player1 = player1?.toLowerCase();
+  player2 = player2?.toLowerCase();
+
+
   if (player1 === player2) {
-      return "draw";
+      console.log('draw');
+      return 'draw';
   }
+  
+  const result = winningRules[player1].includes(player2) ? 'player1' : 'player2';
 
-  if (player1 === "rock" && (player2 === "scissors" || player2 === "lizard")) {
-      return "player1";
-  } else if (player1 === "scissors" && (player2 === "paper" || player2 === "lizard")) {
-      return "player1";
-  } else if (player1 === "paper" && (player2 === "rock" || player2 === "spock")) {
-      return "player1";
-  } else if (player1 === "lizard" && (player2 === "spock" || player2 === "paper")) {
-      return "player1";
-  } else if (player1 === "spock" && (player2 === "scissors" || player2 === "rock")) {
-      return "player1";
-  }
+  console.log(result);
 
-  return "player2";
+  return result;
 }
 
 // Code for the automated tests
