@@ -1,5 +1,4 @@
 /**
-/**
  * Plays a single round of Rock, Paper, Scissors, Lizard, Spock.
  * Logs the result as "player1", "player2", or "draw".
  * @param {string} player1 - Player one's choice.
@@ -21,22 +20,23 @@ function rockPaperScissors(player1, player2) {
 
   // Validate that both player choices are valid entries
   if (!winningRules[player1] || !winningRules[player2]) {
-      console.error('Invalid choices. Please select from: rock, paper, scissors, lizard, spock.');
       throw new Error('Invalid choices.');
   }
 
+  let result;
+  
   if (player1 === player2) {
-      console.log('draw');
-      return 'draw';
+      result = 'draw';
+  } else {
+    result = winningRules[player1].includes(player2) ? 'player1' : 'player2';
   }
-
-  // Determine the winner by checking if player1's choice defeats player2's choice
-  const result = winningRules[player1].includes(player2) ? 'player1' : 'player2';
 
   console.log(result);
 
   return result;
 }
+
+rockPaperScissors("paper", "paper")
 
 // Code for the automated tests
 module.exports = {
