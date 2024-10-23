@@ -1,3 +1,11 @@
+/**
+/**
+ * Plays a single round of Rock, Paper, Scissors, Lizard, Spock.
+ * Logs the result as "player1", "player2", or "draw".
+ * @param {string} player1 - Player one's choice.
+ * @param {string} player2 - Player two's choice.
+ * @returns {string} - The winner: "player1", "player2", or "draw".
+ */
 function rockPaperScissors(player1, player2) {
   // Object that defines what each choice defeats
   const winningRules = {
@@ -22,16 +30,12 @@ function rockPaperScissors(player1, player2) {
       return 'draw';
   }
 
+  // Determine the winner by checking if player1's choice defeats player2's choice
   const result = winningRules[player1].includes(player2) ? 'player1' : 'player2';
 
   console.log(result);
 
   return result;
-}
-
-// Leave this code here for the automated tests
-module.exports = {
-  rockPaperScissors,
 }
 
 // Code for the automated tests
